@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import apiClient from '../../api/ApiClient';
+import { loginUser } from '../../api/auth'
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -12,16 +12,10 @@ function LoginPage() {
 
     setUsername('');
     setPassword('');
-    apiClient.post('/users', {
-      username: username,
-      password: password
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const userInfo = { username: username, password: password };
+    console.log(userInfo)
+    console.log("caca")
+    loginUser(userInfo)
   };
 
   return (
