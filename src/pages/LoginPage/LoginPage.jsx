@@ -12,7 +12,7 @@ function LoginPage() {
 
     setUsername('');
     setPassword('');
-    apiClient.post('/login', {
+    apiClient.post('/users', {
       username: username,
       password: password
     })
