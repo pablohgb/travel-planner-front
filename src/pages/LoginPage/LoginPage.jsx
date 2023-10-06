@@ -30,14 +30,6 @@ function LoginPage() {
           />
         </div>
         <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
           <label>Password:</label>
           <input
             type="password"
