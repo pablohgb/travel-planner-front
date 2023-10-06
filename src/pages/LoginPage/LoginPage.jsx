@@ -4,17 +4,16 @@ import { loginUser } from '../../api/auth'
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // TODO: Perform login logic with username and password
-
+    setEmail('');
     setUsername('');
     setPassword('');
-    const userInfo = { username: username, password: password };
-    console.log(userInfo)
-    console.log("caca")
+    const userInfo = { email: email, username: username, password: password };
     loginUser(userInfo)
   };
 
@@ -22,6 +21,14 @@ function LoginPage() {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <div>
           <label>Username:</label>
           <input

@@ -16,7 +16,7 @@ function registerUser(user) {
 
 function loginUser(user) {
     console.log(user)
-    apiClient.get('/login', {
+    apiClient.post('/login', {
         username: user.username,
         password: user.password
     })
