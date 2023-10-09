@@ -2,8 +2,8 @@ import apiClient from "./ApiClient";
 
 function registerUser(user) {
     console.log(user)
-    apiClient.post('/users', {
-        username: user.username,
+    apiClient.post('/user', {
+        email: user.email,
         password: user.password
     })
         .then(function (response) {
@@ -16,8 +16,8 @@ function registerUser(user) {
 
 function loginUser(user) {
     console.log(user)
-    apiClient.post('/login', {
-        username: user.username,
+    apiClient.post('/user/login', {
+        email: user.email,
         password: user.password
     })
         .then(function (response) {
