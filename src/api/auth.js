@@ -7,7 +7,8 @@ function registerUser(user) {
         password: user.password
     })
         .then(function (response) {
-            console.log(response);
+            const token = response.data;
+            localStorage.setItem('token', token);
         })
         .catch(function (error) {
             console.log(error);
@@ -21,11 +22,21 @@ function loginUser(user) {
         password: user.password
     })
         .then(function (response) {
-            console.log(response);
+            const token = response.data;
+            localStorage.setItem('token', token);
+
         })
         .catch(function (error) {
             console.log(error);
         });
 }
 
-export { registerUser, loginUser }
+function checkIfLogged() {
+    if (!localStorage.getItem('token')) {
+        return false
+    } else {
+        return true
+    }
+
+}
+export { registerUser, loginUser, checkIfLogged }
