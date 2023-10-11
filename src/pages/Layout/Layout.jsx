@@ -13,6 +13,8 @@ const Layout = () => {
                     </li>
                     <li>
                         <Link to="/register">Register</Link>
+                    </li><li>
+                        <Link to="/travel-page">My travels</Link>
                     </li>
                 </ul>
             </nav>

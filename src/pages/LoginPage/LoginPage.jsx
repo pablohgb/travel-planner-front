@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { loginUser } from '../../api/auth';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import FormControl from '@mui/joy/FormControl';
 import FormLabel, { formLabelClasses } from '@mui/joy/FormLabel';
@@ -14,7 +13,6 @@ import Stack from '@mui/joy/Stack';
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,14 +20,12 @@ function LoginPage() {
     const userData = {
       email,
       password,
-      // rememberMe,
     };
 
     try {
       await loginUser(userData);
       setEmail('');
       setPassword('');
-      // setRememberMe(false);
     } catch (error) {
       console.error('Login failed:', error);
     }
@@ -119,21 +115,6 @@ function LoginPage() {
                   />
                 </FormControl>
                 <Stack gap={4} sx={{ mt: 2 }}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}
-                  >
-                    {/* <Checkbox
-                      size="sm"
-                      label="Remember me"
-                      name="persistent"
-                      checked={rememberMe}
-                      onChange={(e) => setRememberMe(e.target.checked)}
-                    /> */}
-                  </Box>
                   <Button type="submit" fullWidth>
                     Sign in
                   </Button>
