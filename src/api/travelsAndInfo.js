@@ -30,19 +30,30 @@ function createTravel(travel) {
     })
 }
 
-function getTravels() {
+async function getTravels() {
     const data = localStorage.getItem('token')
-    console.log(data)
-    apiClient.post('travel/travel-page', {
-        token: data
-    })
-        .then(function (response) {
-            console.log(response.data)
-            return response.data
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+
+    try {
+        const response = await apiClient.get(`/travel/travel-page/${data}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
 }
+
+// function getTravels() {
+//     const data = localStorage.getItem('token')
+//     console.log(data)
+//     apiClient.post('travel/travel-page', {
+//         token: data
+//     })
+//         .then(function (response) {
+//             console.log(response.data)
+//             return response.data
+//         })
+//         .catch(function (error) {
+//             console.log(error);
+//         });
+// }
 
 export { getCountries, getCitiesByCountry, createTravel, getTravels };
