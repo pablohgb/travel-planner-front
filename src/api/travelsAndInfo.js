@@ -35,6 +35,7 @@ async function getTravels() {
 
     try {
         const response = await apiClient.get(`/travel/travel-page/${data}`);
+        console.log(response.data)
         return response.data;
     } catch (error) {
         throw error;

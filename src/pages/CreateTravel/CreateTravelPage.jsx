@@ -167,7 +167,6 @@ function CreateTravelPage() {
                                         onChange={(e) => {
                                             if (e && e.target) {
                                                 handleCityChange(e, index)
-                                                console.log(e)
                                             }
                                         }}
                                         disabled={citiesDisabled}

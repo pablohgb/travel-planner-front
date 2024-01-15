@@ -32,13 +32,14 @@ function LoginPage() {
   };
 
   return (
-    <Box
+    < Box
       sx={(theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         boxShadow: 2,
-      })}
+      })
+      }
     >
       <Box
         sx={{
@@ -124,7 +125,7 @@ function LoginPage() {
           </Stack>
         </Box>
       </Box>
-    </Box>
+    </Box >
   );
 }
 

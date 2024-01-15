@@ -31,11 +31,12 @@ function TravelPage() {
                     {travels.map((travel) => (
                         <li key={travel.id}>
                             <h2>{travel.travelName}</h2>
+                            {console.log(travel.cities)}
                             <p>People: {travel.people}</p>
                             <p>Destination country: {travel.country}</p>
                             <ul>
                                 {travel.cities.map((city) => (
-                                    <li>
+                                    <li key={city.travelCityId}>
                                         <p>city: {city.city}</p>
                                         <p>days: {city.days}</p>
                                     </li>
