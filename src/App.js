@@ -7,10 +7,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/Register/registerPage.jsx'
 import Layout from './pages/Layout/Layout';
 import CreateTravelPage from './pages/CreateTravel/CreateTravelPage';
-import { checkIfLogged } from './api/auth';
 import TravelPage from './pages/MyTravels/MyTravelsPage';
-import PrivateRoute from './components/PrivateRoutes.jsx'; // Import the PrivateRoute component
-import { Routing } from './routes/Routing.routes.jsx';
 
 function App() {
   return (

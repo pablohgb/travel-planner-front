@@ -6,7 +6,7 @@ async function getCountries() {
         return response.data;
     } catch (error) {
         console.log(error);
-        throw error; // Rethrow the error so it can be handled in the component
+        throw error;
     }
 }
 
@@ -16,7 +16,7 @@ async function getCitiesByCountry(countryId) {
         return response.data;
     } catch (error) {
         console.log(error);
-        throw error; // Rethrow the error so it can be handled in the component
+        throw error;
     }
 }
 
@@ -41,20 +41,5 @@ async function getTravels() {
         throw error;
     }
 }
-
-// function getTravels() {
-//     const data = localStorage.getItem('token')
-//     console.log(data)
-//     apiClient.post('travel/travel-page', {
-//         token: data
-//     })
-//         .then(function (response) {
-//             console.log(response.data)
-//             return response.data
-//         })
-//         .catch(function (error) {
-//             console.log(error);
-//         });
-// }
 
 export { getCountries, getCitiesByCountry, createTravel, getTravels };

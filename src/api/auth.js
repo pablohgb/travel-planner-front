@@ -1,8 +1,6 @@
-import { Navigate } from "react-router-dom";
 import apiClient from "./ApiClient";
 
 function registerUser(user) {
-    console.log(user)
     apiClient.post('/user', {
         email: user.email,
         password: user.password
@@ -24,7 +22,6 @@ function loginUser(user) {
     })
         .then(function (response) {
             const token = response.data;
-            console.log(token)
             localStorage.setItem('token', token);
             window.location = "/"
         })
@@ -35,19 +32,8 @@ function loginUser(user) {
 
 function checkIfLogged() {
     if (!localStorage.getItem('token')) {
-        console.log("adios")
-
         return false
     } else {
-        console.log("hola")
-        // apiClient.get(`user/${localStorage.getItem('token')}`)
-        //     .then(function (response) {
-        //         const userInfo = response.data;
-        //         console.log(response.data)
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error)
-        //     })
         return true
     }
 

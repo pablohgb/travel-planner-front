@@ -8,6 +8,7 @@ import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 import Stack from '@mui/joy/Stack';
 import { registerUser } from '../../api/auth'
+import Link from '@mui/joy/Link';
 
 function RegisterPage() {
     const [email, setEmail] = useState('');
@@ -19,7 +20,6 @@ function RegisterPage() {
         setEmail('');
         setPassword('');
         const userInfo = { email: email, password: password };
-        console.log(userInfo, "caca")
         registerUser(userInfo);
     };
 
@@ -75,9 +75,16 @@ function RegisterPage() {
                         },
                     }}
                 >
+
                     <Stack gap={4} sx={{ mb: 2 }}>
                         <Stack gap={1}>
                             <Typography level="h3">Sign up</Typography>
+                            <Typography level="body-sm">
+                                Already have a profile?{' '}
+                                <Link href="login" level="title-sm">
+                                    Sign in!
+                                </Link>
+                            </Typography>
                         </Stack>
                         <Divider />
                         <Stack gap={4} sx={{ mt: 2 }}>
